@@ -1,0 +1,21 @@
+{
+  "name": "prometheus_monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "docker:start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.14.1",
+    "pino-pretty": "^4.7.1",
+    "prom-client": "^13.1.0"
+  }
+}

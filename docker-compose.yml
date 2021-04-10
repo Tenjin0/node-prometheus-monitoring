@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+    node:
+        build: .
+        container_name: node_monitoring
+        ports:
+            - 5000:5000
+    prometheus:
+        container_name: prometheus_example
+        image: prom/prometheus
+        ports:
+            - "9090:9090"
+        command: --config.file=/etc/prometheus/prometheus.yaml
+        volumes:
+            - ./prometheus.yaml:/etc/prometheus/prometheus.yaml
+    grafana:
+        container_name: grafana_example
+        image: grafana/grafana:latest
+        ports:
+            - "6000:3000"
+        depends_on:
+            - prometheus

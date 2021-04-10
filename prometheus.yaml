@@ -1,0 +1,7 @@
+global:
+  scrape_interval:     5s
+  evaluation_interval: 30s
+scrape_configs:
+- job_name: node_example
+  static_configs:
+  - targets: ['node_monitoring:5000']
